@@ -19,7 +19,7 @@ else
     s=mid+1;
     }
     return -1;
- }
+ }   
 
  int main(){
  vector<int> arr{9,10,2,4,6,8};
