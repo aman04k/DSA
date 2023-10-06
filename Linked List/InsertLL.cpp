@@ -17,9 +17,8 @@ class Node{
         this->data=data;
         this->next=NULL;
     }
-}; 
- 
- void print(Node* head){
+};
+void print(Node* head){
     Node* temp=head;
     while(temp != NULL){
         cout<<temp->data << " ";
@@ -27,20 +26,24 @@ class Node{
     }
  }
  
-int main(){
-    //bahut sare node creat kar liya
-     Node* first = new Node(10);
-     Node* second = new Node(20);  
-     Node* third = new Node(30);  
-     Node* fourth = new Node(40);  
-     Node* fifth = new Node(50);  
 
-    first->next = second;
-    second->next = third;
-    third->next = fourth;
-    fourth->next = fifth;
-    
-    cout<<"printing the Linked List"<< endl;
-    print(first);
+// I want to insert a node rifht at the head of LL 
+void insertAHead(Node* &head, int data){
+    //step 1:
+    Node* newNode = new Node(data);
+    //step1:
+    newNode-> next = head;
+    //step 3:
+    head=newNode;
+
+}
+int main(){
+    Node* head = new Node(10);
+    insertAHead(head,20);
+    insertAHead(head,50);
+    insertAHead(head,60);
+    insertAHead(head,90);
+
+    print(head);
     return 0;
-}  
+}
