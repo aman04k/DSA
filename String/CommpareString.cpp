@@ -1,16 +1,29 @@
 #include <iostream>
-#include<string.h>
+#include <string>  // Include the necessary header for strings
 using namespace std;
-int main(){
+
+int main() {
     string a = "Aman";
     string b = "Ankit";
-    if(a.length() != b.length()){
-        return false;
-        for(int i=0; i<a.length(); i++){
-            if(a[i] != b[i]){
-                return false;
+
+    // Check if the lengths of the strings are equal
+    if (a.length() != b.length()) {
+        cout << "The strings are not equal in length." << endl;
+    } else {
+        bool equal = true;
+        for (int i = 0; i < a.length(); i++) {
+            if (a[i] != b[i]) {
+                equal = false;
+                break;  // Exit the loop early since we've found a difference
             }
         }
-        return true;
+
+        if (equal) {
+            cout << "The strings are equal." << endl;
+        } else {
+            cout << "The strings are not equal." << endl;
+        }
     }
+
+    return 0;
 }
